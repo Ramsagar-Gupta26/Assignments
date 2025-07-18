@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Div Example</title>
+    <style>
+        /* Container fills the screen */
+        #container {
+            padding: 20px;
+        }
+
+        /* Style applied to dynamically added divs */
+        #container div {
+            border: 2px solid black;
+            background-color: lightblue;
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container"></div>
+
+    <script>
+        // Function that creates a visible styled div
+        function createDiv(width, height, text) {
+            const newDiv = document.createElement("div");
+            newDiv.style.width = width + "px";
+            newDiv.style.height = height + "px";
+            newDiv.textContent = text;
+
+            const container = document.getElementById("container");
+            container.appendChild(newDiv);
+        }
+
+        // Make function accessible from console
+        window.createDiv = createDiv;
+
+        // Example call (you can remove or keep)
+        createDiv(200, 100, "Hello HashedBit!");
+    </script>
+
+</body>
+</html>
